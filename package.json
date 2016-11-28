@@ -1,0 +1,21 @@
+{
+  "name": "owl-ui-style",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "RoCky Wu <rocky823@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "node ./scripts/build",
+    "publish": "node ./scripts/publish"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-compass": "^2.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-size": "^2.1.0",
+    "owl-ui-lite": "github:design-team-cepave/owl-ui-lite"
+  },
+  "repository": "git@github.com:cepave-f2e/owl-ui-style.git"
+}

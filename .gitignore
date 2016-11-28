@@ -1,0 +1,13 @@
+.idea
+.DS_Store
+.sass-cache
+npm-debug.log
+yarn-error.log
+
+node_modules
+/coverage
+/static
+/gh-pages
+/dist
+/npm
+
