@@ -22,22 +22,23 @@ gu.src('sass/owl-ui-lite.scss', {
   }))
   .pipe(gu.dest('dist'))
   .on('finish', () => {
+    gu.src('node_modules/owl-ui-lite/dist/assets/**/*.svg')
+      .pipe(gu.dest('npm/assets'))
+
     gu.src('dist/*.css')
-      .pipe(size({
-        pretty: true,
-        gzip: true,
-        showFiles: true,
+      .pipe(rename((f) => {
+        f.basename = f.basename.replace('-lite', '-style')
       }))
+      .pipe(gu.dest('npm/dist'))
       .on('finish', () => {
-        gu.src('dist/*.min.css')
-          .pipe(rename((f) => {
-            f.basename = f.basename.replace('-lite', '-style')
+        delete pkg.scripts
+        delete pkg.devDependencies
+        fs.writeFile('npm/package.json', JSON.stringify(pkg, null, 2))
+        gu.src('npm/**')
+          .pipe(size({
+            pretty: true,
+            gzip: true,
+            showFiles: true,
           }))
-          .pipe(gu.dest('npm/dist'))
-          .on('finish', () => {
-            delete pkg.scripts
-            delete pkg.devDependencies
-            fs.writeFile('npm/package.json', JSON.stringify(pkg, null, 2))
-          })
       })
   })
