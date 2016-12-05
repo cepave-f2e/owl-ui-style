@@ -1,0 +1,8 @@
+{
+  "name": "owl-ui-style",
+  "version": "1.0.2",
+  "main": "index.js",
+  "author": "RoCky Wu <rocky823@gmail.com>",
+  "license": "MIT",
+  "repository": "git@github.com:cepave-f2e/owl-ui-style.git"
+}
