@@ -9,7 +9,7 @@ git remote add origin ${repository} &&
 git add . && 
 git commit -anm "${ver}" &&
 git checkout -b ${ver} &&
-git push origin ${ver}`, (err, stdout) => {
+git push origin ${ver} -f`, (err, stdout) => {
   if (err) {
     return console.log(err)
   }
